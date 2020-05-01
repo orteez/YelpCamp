@@ -1,15 +1,10 @@
+# YelpCamp
 
+RESTful web application that allows users to view, comment, and edit camps.
 
-# RESTful API
+## Todo
 
-## CAMPSGROUNDS
-
-INDEX   /campgrounds      GET
-NEW     /campgrounds/new  GET
-SHOW    /campgrounds/:id  GET
-CREATE  /campgrounds      POST
-
-## COMMENTS
-
-NEW    /campgrounds/:id/comments/new  GET
-CREATE /campgrounds/:id/comments      POST
+* Move from Bootstrap 3.3 -> 4.4
+* Add Persistent Database (MongoDB)
+* Publish to Heroku
+* docker-ize
