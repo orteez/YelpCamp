@@ -1,0 +1,21 @@
+<%- include("../partials/header") %> 
+
+<div class="container">
+    <h1 class="text-center">Register!</h1>
+    <div style="width: 30%; margin: 40px auto;">
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <input class="form-control" type="text" name="username" placeholder="name">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="password" name="password" placeholder="password">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-lg btn-primary btn-block" type="submit" name="" id="">
+        </div>
+      </form> 
+      <a class="btn btn-sm btn-warning" href="/">Go Back</a> 
+  </div>
+</div>
+
+<%- include("../partials/footer") %> 
