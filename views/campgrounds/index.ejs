@@ -12,13 +12,13 @@
       </p>
     </div>
   </header>
-  <% if(campgrounds.length == 0) { %>
-  <div class="container">
-    <h1 class="my-auto text-center">No camps found :(</h1>
-  </div>
-  <%} else { campgrounds.forEach( (camp) => { %>
 
   <div class="row text-center" style="margin: auto 0; flex-wrap: wrap;">
+    <% if(campgrounds.length == 0) { %>
+    <div class="container">
+      <h1 class="my-auto text-center">No camps found :(</h1>
+    </div>
+    <%} else { campgrounds.forEach( (camp) => { %>
     <div class="col-md-4 col-sm-6 my-2">
       <div class="card">
         <img class="card-img-top" src="<%= camp.img %>" alt="" />
@@ -32,8 +32,8 @@
         </div>
       </div>
     </div>
+    <% })} %>
   </div>
-  <% })} %>
 </div>
 
 <%- include("../partials/footer") %>
