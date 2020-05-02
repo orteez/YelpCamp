@@ -6,7 +6,7 @@ body {
   z-index: 1;
   position: relative;
   text-align: center;
-  padding-top: 30vh;
+  padding-top: 20vh;
 }
 
 #landing-header h1 {
@@ -38,7 +38,7 @@ body {
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 50s linear infinite;
+  animation: imageAnimation 50s linear 0s infinite;
 }
 
 .slideshow li:nth-child(1) {
@@ -47,18 +47,22 @@ body {
 
 .slideshow li:nth-child(2) {
   background-image: url("https://picsum.photos/id/22/1200");
+  animation-delay: 10s; 
 }
 
 .slideshow li:nth-child(3) {
   background-image: url("https://picsum.photos/id/30/1200");
+  animation-delay: 20s; 
 }
 
 .slideshow li:nth-child(4) {
   background-image: url("https://picsum.photos/id/40/1200");
+  animation-delay: 30s; 
 }
 
 .slideshow li:nth-child(5) {
   background-image: url("https://picsum.photos/id/50/1200");
+  animation-delay: 40s; 
 }
 
 @keyframes imageAnimation {

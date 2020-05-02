@@ -22,3 +22,15 @@
   overflow: auto;
   white-space: nowrap;
 }
+
+.navbar-nav {
+  z-index: 2;
+}
+
+.navbar {
+  z-index: 2;
+}
+
+.navbar-item {
+  z-index: 2;
+}
