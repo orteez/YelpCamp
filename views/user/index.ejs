@@ -3,12 +3,12 @@
 <div class="container">
   <header class="jumbotron">
     <div class="container">
-      <h1>Welcome, <%= user.username %> </h1>
+      <h1>Welcome, <%= user.username %>!</h1>
     </div>
   </header>
   <div class="container">
     <h2>Campgrounds</h2>
-    <%} campgrounds.forEach( (camp) => { %>
+    <% campgrounds.forEach( (camp) => { %>
 
       <div class="row text-center" style="margin: auto 0; flex-wrap: wrap;">
         <div class="col-md-4 col-sm-6 my-2">
@@ -24,12 +24,12 @@
           </div>
         </div>
       </div>
-      <% }) %>
+    <% }) %>
   </div>
   <div class="container">
     <h2>Comments</h2>
-    <%} comments.forEach( (comment) => { %>
-      <div><%= comment.description %> </div>
+    <% comments.forEach( (comment) => { %>
+      <div><%= comment.text %> </div>
     <% }) %>
   </div>
 </div>

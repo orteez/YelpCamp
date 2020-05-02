@@ -6,7 +6,9 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local")
 const session = require("client-sessions")
 
-require('dotenv').config();
+if(process.env.NODE_ENV == "development") {
+  require('dotenv').config();
+}
 
 const User = require("./models/user")
 const methodOverride = require("method-override")
