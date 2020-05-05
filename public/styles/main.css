@@ -34,3 +34,15 @@
 .navbar-item {
   z-index: 2;
 }
+
+.navbar-nav > li > .dropdown-menu { 
+  background-color: #343a40;
+ }
+
+ .navbar-nav > li > .dropdown-menu > .dropdown-item { 
+  color: white;
+ }
+
+ .navbar-nav > li > .dropdown-menu > .dropdown-item:hover { 
+  background-color: #212529;
+ }

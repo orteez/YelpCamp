@@ -20,6 +20,7 @@ router.post('/', isLoggedIn, (req, res) => {
         } else {
           comment.author.id = req.user._id;
           comment.author.username = req.user.username;
+          comment.camp_id = camp._id; // adding relationship between camp and comments
           comment.save();
           camp.comments.push(comment)
           camp.save();

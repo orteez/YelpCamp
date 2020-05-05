@@ -6,31 +6,41 @@
       <h1>Welcome, <%= user.username %>!</h1>
     </div>
   </header>
+  <h2>Account History</h2>
   <div class="container">
     <h2>Campgrounds</h2>
+    <ul class="list-group">
     <% campgrounds.forEach( (camp) => { %>
-
-      <div class="row text-center" style="margin: auto 0; flex-wrap: wrap;">
-        <div class="col-md-4 col-sm-6 my-2">
-          <div class="card">
-            <div class="card-body">
-              <h3><%= camp.name %></h3>
+          <li class="list-group-item">
+              <div><h4><%= camp.name %></h4>
               <a
-                class="btn btn-primary btn-large"
+                class="btn btn-primary float-right"
                 href="/campgrounds/<%= camp._id %>"
-                >Learn More</a
+                >View Camp</a
               >
             </div>
-          </div>
-        </div>
-      </div>
+            <span class="float-left">Published: <%=  moment(camp.created_at).format('MMMM Do YYYY, h:mm:ss a'); %> </span>
+          </li>
     <% }) %>
+  </ul>
   </div>
   <div class="container">
     <h2>Comments</h2>
-    <% comments.forEach( (comment) => { %>
-      <div><%= comment.text %> </div>
-    <% }) %>
+    <ul class="list-group">
+      <% comments.forEach( (comment) => { %>
+        <li class="list-group-item">
+          <div><h5><%= comment.text %></h5>
+            <a
+              class="btn btn-primary float-right"
+              href="/campgrounds/<%= comment.camp_id %>"
+              >View Camp</a
+            >
+          </div>
+          <span class="float-left">Published: <%=  moment(comment.created_at).format('MMMM Do YYYY, h:mm:ss a'); %> </span>
+        </li>
+      <% }) %>
+    </ul>
+
   </div>
 </div>
 
