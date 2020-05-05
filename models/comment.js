@@ -12,6 +12,10 @@ const commentSchema = new mongoose.Schema({
   created_at: {
     type: Date,
     default: new Date()
+  },
+  camp_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Campground"
   }
 })
 
