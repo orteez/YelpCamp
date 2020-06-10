@@ -8,6 +8,7 @@ const {isLoggedIn} = require("../middleware");
 router.get("/", isLoggedIn, (req, res) => {
   Campgound.find({ "author.id": req.user._id }, (err, foundCampgrounds) => {
     Comment.find({ "author.id": req.user._id }, (camperr, foundComments) => {
+      console.log(foundComments)
       res.render("user/index", {campgrounds: foundCampgrounds, comments: foundComments});
     })
   })

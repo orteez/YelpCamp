@@ -1,0 +1,26 @@
+<%- include("../partials/header") %> 
+
+<div class="container">
+  
+  <h1 class="text-center">Upload Photo - Campground: <%= camp.name %> </h1>
+  <div class="row">
+    <div style="width: 30%; margin: 40px auto;">
+      <form action="/campgrounds/<%= camp._id %>/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="photo" />
+        <input class="btn btn-lg btn-primary btn-block" type="submit" name="" id="">
+      </form> 
+      <a href="/campgrounds">Go Back</a> 
+    </div>
+  </div>
+  <div class="row">
+    <% camp.photoUrls.forEach( (urls) => { %>
+      <div class="col-md-4 col-sm-6 my-2">
+        <div class="card">
+          <img class="card-img-top" src="<%= urls %>" alt="" />
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include("../partials/footer") %> 

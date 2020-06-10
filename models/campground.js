@@ -25,6 +25,7 @@ const campgroundSchema = new mongoose.Schema({
     type: Date,
     default: new Date()
   },
+  photoUrls: [String]
 })
 
 module.exports = Campground = mongoose.model("Campground", campgroundSchema);

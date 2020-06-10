@@ -5,6 +5,10 @@ const moment = require('moment')
 const Campground = require('../models/campground');
 
 const {isAuthorized, isLoggedIn} = require('../middleware');
+const {uploadFile} = require("../upload")
+
+const multer  = require('multer')
+const upload = multer({ dest: './photos' })
 
 router.get("/", (req, res) => {
   Campground.find({}, (err, campgrounds) => {
@@ -70,6 +74,7 @@ router.get("/:id", (req, res) => {
     } else if(!campground) {
       res.send("Not found.")
     } else {
+      console.log(campground.photoUrls)
       res.render("campgrounds/show", {camp: campground})
     }
   })
@@ -108,5 +113,21 @@ router.delete("/:id", isAuthorized, (req, res) => {
 
   })
 })
+
+// EDIT CAMPS - GET request
+router.get("/:id/upload", isAuthorized, (req, res) => {
+  Campground.findById(req.params.id, (err, campground) => {
+      res.render("campgrounds/upload", {camp: campground})
+  })
+});
+
+router.post("/:id/upload", isAuthorized, upload.single("photo"),  (req, res) => {
+  uploadFile(req.params.id, req.file).then(() =>{
+    res.redirect(`/campgrounds/${req.params.id}`)
+  }).catch(err => {
+    console.log(err)
+    res.sendStatus(500)
+  })
+});
 
 module.exports = router;
